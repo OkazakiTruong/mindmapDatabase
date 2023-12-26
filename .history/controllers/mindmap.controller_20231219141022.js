@@ -1,0 +1,17 @@
+const mindmapModel = require("../models/mindmap");
+const mindMapcontroller = {
+  getAll: async (req, res) => {
+    let data = await mindmapModel.find({});
+    return res.status(200).json(data);
+  },
+  getById: async (req, res) => {
+    let data = await mindmapModel.findById(req.params.id);
+    return res.status(200).json(data);
+  },
+  post: async (req, res) => {
+    const data = req.body;
+    console.log(data);
+  },
+};
+
+module.exports = mindMapcontroller;
